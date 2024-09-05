@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffdde1, #fbc2eb);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff6347;
+            margin-top: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .cake-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cake-container img {
+            border: 3px solid #ffb6c1;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 300px;
+            height: auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cake-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        .message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 60px; 
+            background: #f5f5dc;
+            border: 3px solid #d8a2b4;
+            border-radius: 20px; 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            max-width: 1000px; 
+            width: 95vw; 
+            max-height: 80vh; 
+            overflow-y: auto; 
+            z-index: 1000;
+            font-size: 1.3em; 
+            line-height: 1.6;
+        }
+        .corner-box {
+            position: absolute;
+            width: 150px; 
+            height: 150px; 
+            border: 3px solid #d8a2b4;
+            background: #f5f5dc;
+            border-radius: 5px;
+            overflow: hidden; 
+        }
+        .corner-box.top-left {
+            top: -75px; 
+            left: -75px;
+        }
+        .corner-box.bottom-right {
+            bottom: -75px; 
+            right: -75px;
+        }
+        .corner-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        @media (max-width: 600px) {
+            .cake-container img {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday!</h1>
+    <div class="cake-container">
+        <img src="https://media.tenor.com/Kktwb31xEgsAAAAM/birthday-cake-cake.gif" alt="Animated Birthday Cake" onclick="showMessage()">
+        <div class="overlay" id="overlay" onclick="hideMessage()"></div>
+        <div class="message" id="birthdayMessage">
+            <div class="corner-box top-left">
+                <img src="https://your-repo-url/path/to/image1.jpeg" alt="Top Left Image">
+            </div>
+            <div class="corner-box bottom-right">
+                <img src="https://your-repo-url/path/to/image2.jpeg" alt="Bottom Right Image">
+            </div>
+           
+            <p>Happy Birthday My Love! Even though we’re miles apart, I want you to know that you’re in my thoughts today and always. I wish I could be there to celebrate with you, I hope you feel my love and best wishes from afar.</p>
+            <p>You mean the world to me, and I’m so grateful for the love and joy you bring into my life, even from a distance. Every moment we share, even through screens, is precious to me.</p>
+            <p>Thank you for being such an amazing part of my life. I’m counting down the days until we can be together and create more wonderful memories.</p>
+        </div>
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById('birthdayMessage').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+        function hideMessage() {
+            document.getElementById('birthdayMessage').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
